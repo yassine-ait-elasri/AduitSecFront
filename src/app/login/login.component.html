@@ -1,0 +1,47 @@
+<!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
+<div class="center-div container" id="container">
+	<div class="form-container sign-up-container">
+
+	</div>
+	<div class="form-container sign-in-container">
+		<form [formGroup]="userFormGroup" (ngSubmit)="handleLogin()">
+			<h1>Login</h1>
+            <p>Welcome back! Log in by entering your information below</p>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<!-- <span>or use your account</span> -->
+			<input formControlName="username" type="email" placeholder="Email" />
+			<input formControlName="password" type="password" placeholder="Password" />
+			<div class="text-danger mb-3 font-weight-bold"  *ngIf="errorMessage">{{errorMessage}}</div>
+
+			<a href="#">Forgot your password?</a>
+			<button type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1></h1>
+				<p></p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Audit Mission Management </h1>
+				<p></p>
+				<!-- <button class="ghost" id="signUp"></button> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+</footer> -->

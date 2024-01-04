@@ -1,0 +1,289 @@
+
+
+<header class="header">
+  <div class="header__intro">
+    <div class="header__logo">
+      <a href="/">
+        <img alt="Company logo" src="https://aisse.com/fr/uploads/files/Images/Infocus/233826a67be66a810b23a263230da62e_XL.jpg">
+      </a>
+    </div>
+    <!--    <div th:if="${listRequest != null && listRequest.role != null}">-->
+    <!--      <h1 th:if="${listRequest != null && listRequest.role != null && listRequest.role == T(com.axiomq.scf.core.domain.common.UserRole).MANAGER}">managers</h1>-->
+    <!--      <h1 th:if="${listRequest != null && listRequest.role != null && listRequest.role == T(com.axiomq.scf.core.domain.common.UserRole).CONSULTANT}">consultants</h1>-->
+    <!--      <h1 th:if="${listRequest != null && listRequest.role != null && listRequest.role == T(com.axiomq.scf.core.domain.common.UserRole).AUDITOR}">auditors</h1>-->
+    <!--    </div>-->
+  </div>
+  <div class="header__settings">
+
+
+
+    <a aria-expanded="false" class="header__dropdown dropdown-toggler" data-bs-toggle="dropdown" href="#" id="header_dropdown" role="button">
+      <div class="flex-center">
+        <div class="header__user">
+          <img alt="logo" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" onerror="this.src='/img/placeholder-profileIcon.svg';">
+        </div>
+        <span class="header__settings-icon">
+          <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item">Manage Accounts</a>
+
+      </li>
+      <li>
+        <a class="dropdown-item" href="/web/user/view/profile">Settings</a>
+      </li>
+
+
+      <li>
+        <a class="dropdown-item" href="/perform_logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</header>
+   <section class="layout__page">
+
+    <aside class="sidebar">
+<div class="sidebar__inner">
+
+<nav class="sidebar__nav">
+  <ul>
+    <!-- <li>
+      <a id="nav_dashboard" href="/web/dashboard/">
+        <i class="fa-light fa-table-columns sidebar__icon" aria-hidden="true"></i>
+        <span class="sidebar__link">Dashboard</span>
+      </a>
+    </li> -->
+
+    <li>
+      <a id="nav_control-scope" href="http://localhost:4200/chooseFrameworks" class="active">
+        <i class="fa-light fa-sliders sidebar__icon" aria-hidden="true"></i>
+        <span class="sidebar__link" >Framework</span>
+        <span class="sidebar__icon sidebar__icon--lock sidebar__icon--small">
+
+          <i class="fa-solid fa-lock-keyhole-open" aria-hidden="true"></i>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a id="upload" href="http://localhost:4200/upload" >
+        <i class="fa-light fa-sliders sidebar__icon" aria-hidden="true"></i>
+        <span class="sidebar__link" >Upload Excel</span>
+        <span class="sidebar__icon sidebar__icon--lock sidebar__icon--small">
+
+          <i class="fa-solid fa-lock-keyhole-open" aria-hidden="true"></i>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a id="nav_dashboard" href="http://localhost:4200/audit">
+        <i class="fa-light fa-table-columns sidebar__icon" aria-hidden="true"></i>
+        <span class="sidebar__link">Create Project</span>
+      </a>
+
+
+    </li>
+
+
+  </ul>
+</nav>
+
+<footer class="sidebar__footer">
+  <div class="sidebar__legal">
+    <div class="sidebar__legal-content">
+      <a id="privacy_policy" href="https://www.iubenda.com/privacy-policy/10363555" target="_blank" title="Privacy Policy ">Privacy Policy</a>
+      <span>|</span>
+      <a id="terms_and_conditions" href="https://www.iubenda.com/terms-and-conditions/10363555" target="_blank" title="Terms and Conditions ">Terms and Conditions</a>
+    </div>
+    <!-- <div class="sidebar__legal-content">
+      <p>Copyright ©</p>
+      <p>2023</p>
+      <a href="#" id="scfconnect">SCF Connect</a>
+    </div> -->
+  </div>
+</footer>
+
+</div>
+</aside>
+
+     <script>
+var tooltipTriggerList = [].slice.call(
+document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+</script>
+
+    <section class="main">
+      <section class="main__content">
+        <section class="overview">
+<ul>
+<li id="frameworks" class="overview__item overview__item--primary active">
+  1. Select Frameworks
+  <span class="arrow-right"></span>
+</li>
+<!-- <li class="overview__item overview__item--secondary">
+  <span class="arrow-left"></span>
+  2. Refine Controls
+  <span class="arrow-right"></span>
+</li> -->
+<!-- <li class="overview__item overview__item--tertiary">
+  <span class="arrow-left"></span>
+  3. Scope Overview
+</li> -->
+</ul>
+</section>
+        <section class="scope programs">
+          <div class="programs__block">
+            <div class="programs__header">
+              <h2 id="frameworks">Choose Frameworks</h2>
+              <div class="search-field">
+                <input id="search" type="search" placeholder="Search for frameworks...">
+                <i class="fa-light fa-magnifying-glass" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div id="programContent" class="programs__content">
+
+<ul id="program-content-list">
+<li *ngFor="let standard of frameworkNames" id="program-item-1">
+  <div class="row g-0">
+    <div class="col" id="1">
+      <div class="d-flex">
+        <input type="checkbox"
+        [ngModel]="selectedFrameworks.includes(standard)"
+        (change)="toggleFrameworkSelection(standard)" >
+        <!-- <label for="chose_1"></label> -->
+        <span class="programs__content__label-text">{{standard.name}}</span>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="progress__wrap">
+        <span class="progress__range progress__range--start" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Selected controls <br> in this framework" data-bs-html="true">158</span>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-label="Select program" style="width:55%" aria-valuemin="0" aria-valuemax="100" aria-valuenow="55"></div>
+        </div>
+        <span class="progress__range progress__range--end" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Remaining controls <br> in this framework" data-bs-html="true">126</span>
+      </div>
+    </div> -->
+  </div>
+</li>
+<!--
+<script>
+  $("[id^='program-item-']").change(function (e) {
+    const clickedElement = e.currentTarget;
+    const programId = clickedElement.id.replace("program-item-", "");
+
+    $.ajax({
+      type: "POST",
+      url: "/api/scope/select",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify({ scopeId: controlScopeId, programId }),
+    }).always(function () {
+      reload();
+
+      const topPosition = clickedElement.nextElementSibling.id;
+
+      localStorage.setItem("offset-to", topPosition);
+    });
+  });
+
+  // Enable tooltip
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+
+<script>
+  $(function () {
+    const shouldScrollTo = localStorage.getItem("offset-to");
+
+    if (!shouldScrollTo) return;
+
+    document.getElementById(shouldScrollTo).scrollIntoView({
+      behavior: "instant",
+      block: "start",
+      inline: "nearest",
+    });
+  });
+</script> -->
+</ul>
+</div>
+
+          </div>
+          <div class="programs__block">
+            <div class="programs__header">
+              <h2 id="frameworks">Selected Frameworks</h2>
+              <div class="programs__info">
+                <!-- <p id="selectedCounter"># of Selected Controls: 333</p> -->
+                <!-- <p id="remainingCounter"># of Remaining Controls: 835</p> -->
+              <p></p>
+              </div>
+            </div>
+            <div id="selectedItems" class="programs__content">
+
+<ul id="selectedProgramsList">
+<li *ngFor="let standard of selectedFrameworks ">
+  <div class="row g-0">
+    <div class="col" id="6">
+      <div class="d-flex">
+        <input type="checkbox"  [disabled]="selectedFrameworks.includes(standard)"data-program-id="6" id="chose_6" checked="">
+        <!-- <label for="chose_6"></label> -->
+        <span class="programs__content__label-text"> {{standard.name}}</span>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="progress__wrap">
+        <span class="progress__range progress__range--start" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Selected controls <br> in this framework" data-bs-html="true">333</span>
+        <div class="progress progress--selected">
+          <div class="progress-bar" role="progressbar" aria-label="Select program" style="width:0%" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        </div>
+        <span class="progress__range progress__range--end" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Remaining controls <br> in this framework" data-bs-html="true">0</span>
+      </div>
+    </div> -->
+  </div>
+</li>
+</ul>
+<!-- <script>
+
+$(function () {
+  toggleButtonNext(1)
+});
+
+$(".checkbox-selected").change(function () {
+  $.ajax({
+    type: "PUT",
+    url: "/api/scope/remove",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    data: JSON.stringify({
+      scopeId: controlScopeId,
+      programId: $(this).attr("data-program-id"),
+    }),
+  }).always(function () {
+    reload();
+  });
+});
+//$('#selectedCounter').text("# of Selected Controls: " + 333);
+//$("#remainingCounter").text("# of Remaining Controls: " + 835);
+</script> -->
+</div>
+
+          </div>
+        </section>
+      </section>
+      <!-- <footer class="main__footer">
+        <div class="action">
+          <a id="select_next" class="btn btn--primary btn--next" href="#">
+            Proceed to Refine Controls
+          </a>
+        </div>
+      </footer> -->
+    </section>
+  </section>

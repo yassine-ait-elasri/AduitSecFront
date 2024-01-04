@@ -1,0 +1,127 @@
+<ng-container>
+<header class="header">
+  <div class="header__intro">
+    <div class="header__logo">
+      <a href="/">
+        <img alt="Company logo" src="https://aisse.com/fr/uploads/files/Images/Infocus/233826a67be66a810b23a263230da62e_XL.jpg">
+      </a>
+    </div>
+  </div>
+  <div class="header__settings">
+    <a aria-expanded="false" class="header__dropdown dropdown-toggler" data-bs-toggle="dropdown" href="#" id="header_dropdown" role="button">
+      <div class="flex-center">
+        <div class="header__user">
+          <img alt="logo" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" onerror="this.src='/img/placeholder-profileIcon.svg';">
+        </div>
+        <span class="header__settings-icon">
+          <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item">Manage Accounts</a>
+
+      </li>
+      <li>
+        <a class="dropdown-item" href="/web/user/view/profile">Settings</a>
+      </li>
+
+
+      <li>
+        <a class="dropdown-item" href="/perform_logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="layout__page">
+
+  <aside class="sidebar">
+    <div class="sidebar__inner">
+
+      <nav class="sidebar__nav">
+        <ul>
+          <li>
+            <a id="Framwork" href="http://localhost:4200/chooseFrameworks">
+              <i class="fa-light fa-table-columns sidebar__icon" aria-hidden="true"></i>
+              <span class="sidebar__link">Framworks</span>
+            </a>
+
+
+          </li>
+
+          <li>
+            <a id="upload" href="http://localhost:4200/upload" class="active">
+              <i class="fa-light fa-sliders sidebar__icon" aria-hidden="true"></i>
+              <span class="sidebar__link" >Upload Excel</span>
+              <span class="sidebar__icon sidebar__icon--lock sidebar__icon--small">
+
+          <i class="fa-solid fa-lock-keyhole-open" aria-hidden="true"></i>
+        </span>
+            </a>
+          </li>
+          <li>
+            <a id="nav_dashboard" href="http://localhost:4200/audit">
+              <i class="fa-light fa-table-columns sidebar__icon" aria-hidden="true"></i>
+              <span class="sidebar__link">Create Project</span>
+            </a>
+
+
+          </li>
+
+
+        </ul>
+      </nav>
+
+      <footer class="sidebar__footer">
+        <div class="sidebar__legal">
+          <div class="sidebar__legal-content">
+            <a id="privacy_policy" href="https://www.iubenda.com/privacy-policy/10363555" target="_blank" title="Privacy Policy ">Privacy Policy</a>
+            <span>|</span>
+            <a id="terms_and_conditions" href="https://www.iubenda.com/terms-and-conditions/10363555" target="_blank" title="Terms and Conditions ">Terms and Conditions</a>
+          </div>
+          <!-- <div class="sidebar__legal-content">
+            <p>Copyright ©</p>
+            <p>2023</p>
+            <a href="#" id="scfconnect">SCF Connect</a>
+          </div> -->
+        </div>
+      </footer>
+
+    </div>
+  </aside>
+
+  <script>
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  </script>
+
+  <section class="main">
+    <section class="main__content">
+      <section class="overview">
+      </section>
+
+      <section class="UploadSection">
+        <div class="UploadDiv">
+          <div class="programs__header2">
+            <h2 id="updloadId">charger le meta Framwork</h2>
+            <div class="uploadclass">
+              <input  type="file" (change)="onFileChanged($event)" accept=".xlsx, .xls" />
+
+            </div>
+            <div class="btn1"> <button id="btn1"  (click)="uploadFile()">Upload Excel</button></div>
+            <style>
+
+            </style>
+
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+</section>
+</ng-container>
